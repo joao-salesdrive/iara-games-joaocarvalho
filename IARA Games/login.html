@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Faça login na Iara Games e acesse sua conta.">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./auth.css">
+
+    <title>Login — Iara Games</title>
+</head>
+<body>
+
+    <header class="header" role="banner">
+        <a href="./index.html" class="logo" aria-label="Iara Games — página inicial">
+            <img src="./images/logo-iara-v1.png" alt="Logo Iara Games" width="24" height="24">
+            <span>IARA</span>
+        </a>
+    </header>
+
+    <main class="auth-main" id="conteudo-principal">
+        <section class="auth-card" aria-labelledby="titulo-login">
+
+            <div class="auth-header">
+                <span class="auth-label">// acesse sua conta</span>
+                <h1 class="auth-title" id="titulo-login">Login</h1>
+            </div>
+
+            <form class="auth-form" action="#" method="post" novalidate>
+
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="seu@email.com"
+                        autocomplete="email"
+                        required
+                        aria-required="true"
+                    >
+                </div>
+
+                <div class="form-group">
+                    <label for="senha">Senha</label>
+                    <input
+                        type="password"
+                        id="senha"
+                        name="senha"
+                        placeholder="••••••••"
+                        autocomplete="current-password"
+                        required
+                        aria-required="true"
+                    >
+                    <a href="./em-construcao.html" class="form-link-small" tabindex="0">Esqueci minha senha</a>
+                </div>
+
+                <button type="submit" class="btn-primary">
+                    Entrar
+                </button>
+
+            </form>
+
+            <p class="auth-footer-text">
+                Não tem uma conta?
+                <a href="./cadastro.html" class="form-link">Criar conta</a>
+            </p>
+
+        </section>
+    </main>
+
+</body>
+</html>

@@ -1,154 +1,305 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <meta name="description" content="Iara Games — plataforma de jogos indie brasileiros. Descubra, compre e apoie desenvolvedores nacionais.">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@100..900&family=Geist:wght@100..900&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="./style.css">
 
-    <title>Iara Games</title>
+    <title>Iara Games — Jogos Indie Brasileiros</title>
 </head>
-<body>  
-    <header class="header">
-        <div class="logo">
-            <img src="./images/logo-iara-v1.png" alt="Logo Iara Games">
-            <h1>IARA</h1>
-        </div>
-            
-        <div class="links">
-        <a href="./em-construcao.html">Forum</a>
-        <a href="./em-construcao.html">Suporte</a>
-        <a href="./em-construcao.html" class="btn-login">
-            <img src="./images/icons/icon-user.png" alt="Login">
-            Login
+<body>
+
+    <!-- CABEÇALHO -->
+    <header class="header" role="banner">
+        <a href="./index.html" class="logo" aria-label="Iara Games — página inicial">
+            <img src="./images/logo-iara-v1.png" alt="Logo Iara Games" width="24" height="24">
+            <span>IARA</span>
         </a>
-</div>
+
+        <nav class="links" aria-label="Navegação principal">
+            <ul>
+                <li><a href="./em-construcao.html">Fórum</a></li>
+                <li><a href="./em-construcao.html">Suporte</a></li>
+            </ul>
+            <a href="./login.html" class="btn-login" aria-label="Fazer login ou criar conta">
+                <img src="./images/icons/icon-user.png" alt="" aria-hidden="true" width="16" height="16">
+                Login
+            </a>
+        </nav>
     </header>
-    
-    <div class="hero-banner">
-        <img src="./images/image50.png" alt="Enigma do Medo" class="hero-main">
 
-        <div class="hero-side">
-            <img src="./images/image25-1.png" alt="Mullet MadJack" class="hero-thumb">
-            <img src="./images/image25-2.png.png" alt="Fobia - St. Dinfna Hotel" class="hero-thumb">
-        </div>
-    </div>
+    <!-- CONTEÚDO PRINCIPAL -->
+    <main id="conteudo-principal">
 
-    <div class="banner-pagination">
-        <div class="pagination-bar">
-            <span class="bar-segment active"></span>
-            <span class="bar-segment"></span>
-            <span class="bar-segment"></span>
-            <span class="bar-segment"></span>
-            <span class="bar-segment"></span>
-        </div>
-        <div class="pagination-arrows">
-            <button class="arrow">
-                <img src="./images/icons/arrow_left.png" alt="Anterior">
-            </button>
-            <button class="arrow">
-                <img src="./images/icons/arrow_right.png" alt="Próximo">
-            </button>
-        </div>
-    </div>
+        <!-- BANNER HERO -->
+        <section class="hero-banner" aria-label="Jogos em destaque">
+            <figure class="hero-main">
+                <img src="./images/image50.png" alt="O Enigma do Medo — jogo de aventura e mistério brasileiro">
+            </figure>
 
-    <section class="section-games">
-        <div class="section-header">
-            <h2 class="section-title">$ MAIS VENDIDOS</h2>
-            <a href="./em-construcao.html" class="section-link">VER TODOS</a>
-        </div>
+            <div class="hero-side" role="group" aria-label="Outros destaques">
+                <figure class="hero-thumb-wrapper">
+                    <img src="./images/image25-1.png" alt="Mullet MadJack — jogo de ação estilo anime" class="hero-thumb">
+                </figure>
+                <figure class="hero-thumb-wrapper">
+                    <img src="./images/fobia.png" alt="Fobia St. Dinfna Hotel — terror psicológico brasileiro" class="hero-thumb">
+                </figure>
+            </div>
+        </section>
 
-        <div class="games-list">
-            <div class="game-card">
-                <img src="./images/aila.png" alt="A.I.L.A">
-                <span class="game-name">A.I.L.A</span>
-                <span class="game-price">R$ 79,95</span>
+        <!-- PAGINAÇÃO DO BANNER -->
+        <div class="banner-pagination" role="group" aria-label="Navegação do banner">
+            <div class="pagination-bar" role="tablist" aria-label="Slides do banner">
+                <span class="bar-segment active" role="tab" aria-selected="true" aria-label="Slide 1"></span>
+                <span class="bar-segment" role="tab" aria-selected="false" aria-label="Slide 2"></span>
+                <span class="bar-segment" role="tab" aria-selected="false" aria-label="Slide 3"></span>
+                <span class="bar-segment" role="tab" aria-selected="false" aria-label="Slide 4"></span>
+                <span class="bar-segment" role="tab" aria-selected="false" aria-label="Slide 5"></span>
             </div>
-            <div class="game-card">
-                <img src="./images/ruff-ghannor.png" alt="Ruff Ghannor">
-                <span class="game-name">Ruff Ghannor</span>
-                <span class="game-price">R$ 55,99</span>
+            <div class="pagination-arrows">
+                <button class="arrow" aria-label="Slide anterior">
+                    <img src="./images/icons/arrow_left.png" alt="" aria-hidden="true">
+                </button>
+                <button class="arrow" aria-label="Próximo slide">
+                    <img src="./images/icons/arrow_right.png" alt="" aria-hidden="true">
+                </button>
             </div>
-            <div class="game-card">
-                <img src="./images/chroma-squad.png" alt="Chroma Squad">
-                <span class="game-name">Chroma Squad</span>
-                <span class="game-price">R$ 46,99</span>
-            </div>
-            <div class="game-card">
-                <img src="./images/lenda-heroi.png" alt="A Lenda do Herói">
-                <span class="game-name">A Lenda do Herói</span>
-                <span class="game-price">R$ 35,00</span>
-            </div>
-            <div class="game-card">
-                <img src="./images/bagdex.png" alt="Bagdex">
-                <span class="game-name">Bagdex</span>
-                <span class="game-price">Grátis</span>
-            </div>
-        </div>
-    </section>
-
-    <section class="section-games">
-        <div class="section-header">
-            <h2 class="section-title">MELHORES AVALIAÇÕES</h2>
-            <a href="./em-construcao.html" class="section-link">VER TODOS</a>
         </div>
 
-        <div class="games-list">
-            <div class="game-card">
-                <img src="./images/aila.png" alt="A.I.L.A">
-                <span class="game-name">A.I.L.A</span>
-                <span class="game-price">R$ 79,95</span>
+        <!-- SEÇÃO: MAIS VENDIDOS -->
+        <section class="section-games" aria-labelledby="titulo-mais-vendidos">
+            <div class="section-header">
+                <h2 class="section-title" id="titulo-mais-vendidos">$ MAIS VENDIDOS</h2>
+                <a href="./em-construcao.html" class="section-link" aria-label="Ver todos os jogos mais vendidos">VER TODOS</a>
             </div>
-            <div class="game-card">
-                <img src="./images/ruff-ghannor.png" alt="Ruff Ghannor">
-                <span class="game-name">Ruff Ghannor</span>
-                <span class="game-price">R$ 55,99</span>
-            </div>
-            <div class="game-card">
-                <img src="./images/chroma-squad.png" alt="Chroma Squad">
-                <span class="game-name">Chroma Squad</span>
-                <span class="game-price">R$ 46,99</span>
-            </div>
-            <div class="game-card">
-                <img src="./images/lenda-heroi.png" alt="A Lenda do Herói">
-                <span class="game-name">A Lenda do Herói</span>
-                <span class="game-price">R$ 35,00</span>
-            </div>
-            <div class="game-card">
-                <img src="./images/bagdex.png" alt="Bagdex">
-                <span class="game-name">Bagdex</span>
-                <span class="game-price">Grátis</span>
-            </div>
-        </div>
-    </section>
 
-    <section class="section-games section-categories">
-    <div class="section-header">
-        <h2 class="section-title">CATEGORIAS</h2>
-        <a href="./em-construcao.html" class="section-link">VER TODOS</a>
-    </div>
+            <ul class="games-list" role="list">
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A.I.L.A — R$ 79,95">
+                        <img src="./images/aila.png" alt="Capa do jogo A.I.L.A">
+                        <span class="game-name">A.I.L.A</span>
+                        <span class="game-price">R$ 79,95</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Ruff Ghannor — R$ 55,99">
+                        <img src="./images/ruff-ghannor.png" alt="Capa do jogo Ruff Ghannor">
+                        <span class="game-name">Ruff Ghannor</span>
+                        <span class="game-price">R$ 55,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Chroma Squad — R$ 46,99">
+                        <img src="./images/chroma-squad.png" alt="Capa do jogo Chroma Squad">
+                        <span class="game-name">Chroma Squad</span>
+                        <span class="game-price">R$ 46,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A Lenda do Herói — R$ 35,00">
+                        <img src="./images/lenda-heroi.png" alt="Capa do jogo A Lenda do Herói">
+                        <span class="game-name">A Lenda do Herói</span>
+                        <span class="game-price">R$ 35,00</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Bagdex — Grátis">
+                        <img src="./images/bagdex.png" alt="Capa do jogo Bagdex">
+                        <span class="game-name">Bagdex</span>
+                        <span class="game-price">Grátis</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
 
-    <div class="games-list">
-        <div class="category-card" style="background-color: #6EFAB4;">
-            <span style="color: #1A7A4A;">AÇÃO</span>
+        <!-- SEÇÃO: MELHORES AVALIAÇÕES -->
+        <section class="section-games" aria-labelledby="titulo-melhores">
+            <div class="section-header">
+                <h2 class="section-title" id="titulo-melhores">MELHORES AVALIAÇÕES</h2>
+                <a href="./em-construcao.html" class="section-link" aria-label="Ver todos os jogos com melhores avaliações">VER TODOS</a>
+            </div>
+
+            <ul class="games-list" role="list">
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A.I.L.A — R$ 79,95">
+                        <img src="./images/aila.png" alt="Capa do jogo A.I.L.A">
+                        <span class="game-name">A.I.L.A</span>
+                        <span class="game-price">R$ 79,95</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Ruff Ghannor — R$ 55,99">
+                        <img src="./images/ruff-ghannor.png" alt="Capa do jogo Ruff Ghannor">
+                        <span class="game-name">Ruff Ghannor</span>
+                        <span class="game-price">R$ 55,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Chroma Squad — R$ 46,99">
+                        <img src="./images/chroma-squad.png" alt="Capa do jogo Chroma Squad">
+                        <span class="game-name">Chroma Squad</span>
+                        <span class="game-price">R$ 46,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A Lenda do Herói — R$ 35,00">
+                        <img src="./images/lenda-heroi.png" alt="Capa do jogo A Lenda do Herói">
+                        <span class="game-name">A Lenda do Herói</span>
+                        <span class="game-price">R$ 35,00</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Bagdex — Grátis">
+                        <img src="./images/bagdex.png" alt="Capa do jogo Bagdex">
+                        <span class="game-name">Bagdex</span>
+                        <span class="game-price">Grátis</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO: JOGOS CONSCIENTES -->
+        <section class="section-games" aria-labelledby="titulo-conscientes">
+            <div class="section-header">
+                <h2 class="section-title" id="titulo-conscientes">JOGOS CONSCIENTES</h2>
+                <a href="./em-construcao.html" class="section-link" aria-label="Ver todos os jogos conscientes">VER TODOS</a>
+            </div>
+
+            <ul class="games-list" role="list">
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Bagdex — Grátis">
+                        <img src="./images/bagdex.png" alt="Capa do jogo Bagdex">
+                        <span class="eco-badge" aria-label="Jogo com temática ambiental">Eco</span>
+                        <span class="game-name">Bagdex</span>
+                        <span class="game-price">Grátis</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A Lenda do Herói — R$ 35,00">
+                        <img src="./images/lenda-heroi.png" alt="Capa do jogo A Lenda do Herói">
+                        <span class="eco-badge" aria-label="Jogo com temática ambiental">Eco</span>
+                        <span class="game-name">A Lenda do Herói</span>
+                        <span class="game-price">R$ 35,00</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Chroma Squad — R$ 46,99">
+                        <img src="./images/chroma-squad.png" alt="Capa do jogo Chroma Squad">
+                        <span class="eco-badge" aria-label="Jogo com temática ambiental">Eco</span>
+                        <span class="game-name">Chroma Squad</span>
+                        <span class="game-price">R$ 46,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="Ruff Ghannor — R$ 55,99">
+                        <img src="./images/ruff-ghannor.png" alt="Capa do jogo Ruff Ghannor">
+                        <span class="eco-badge" aria-label="Jogo com temática ambiental">Eco</span>
+                        <span class="game-name">Ruff Ghannor</span>
+                        <span class="game-price">R$ 55,99</span>
+                    </a>
+                </li>
+                <li class="game-card">
+                    <a href="./em-construcao.html" aria-label="A.I.L.A — R$ 79,95">
+                        <img src="./images/aila.png" alt="Capa do jogo A.I.L.A">
+                        <span class="eco-badge" aria-label="Jogo com temática ambiental">Eco</span>
+                        <span class="game-name">A.I.L.A</span>
+                        <span class="game-price">R$ 79,95</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+        <!-- SEÇÃO: CATEGORIAS -->
+        <section class="section-games section-categories" aria-labelledby="titulo-categorias">
+            <div class="section-header">
+                <h2 class="section-title" id="titulo-categorias">CATEGORIAS</h2>
+                <a href="./em-construcao.html" class="section-link" aria-label="Ver todas as categorias">VER TODOS</a>
+            </div>
+
+            <ul class="games-list" role="list">
+                <li class="category-card" style="background-color: #6EFAB4;">
+                    <a href="./em-construcao.html" aria-label="Jogos de Ação">
+                        <span style="color: #1A7A4A;">AÇÃO</span>
+                    </a>
+                </li>
+                <li class="category-card" style="background-color: #F4967C;">
+                    <a href="./em-construcao.html" aria-label="Jogos de RPG">
+                        <span style="color: #A63A1E;">RPG</span>
+                    </a>
+                </li>
+                <li class="category-card" style="background-color: #111111;">
+                    <a href="./em-construcao.html" aria-label="Jogos de Terror">
+                        <span style="color: #ffffff;">TERROR</span>
+                    </a>
+                </li>
+                <li class="category-card" style="background-color: #87DCFA;">
+                    <a href="./em-construcao.html" aria-label="Jogos de Aventura">
+                        <span style="color: #1A6A8A;">AVENTURA</span>
+                    </a>
+                </li>
+                <li class="category-card" style="background-color: #C87EF5;">
+                    <a href="./em-construcao.html" aria-label="Jogos de Estratégia">
+                        <span style="color: #6A1FA3;">ESTRATÉGIA</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- RODAPÉ -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-inner">
+
+            <div class="footer-brand">
+                <a href="./index.html" class="logo footer-logo" aria-label="Iara Games — voltar ao início">
+                    <img src="./images/logo-iara-v1.png" alt="Logo Iara Games" width="24" height="24">
+                    <span>IARA</span>
+                </a>
+                <p class="footer-tagline">A plataforma dos jogos indie brasileiros.</p>
+            </div>
+
+            <nav class="footer-nav" aria-label="Links do rodapé">
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Plataforma</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html">Explorar jogos</a></li>
+                        <li><a href="./em-construcao.html">Categorias</a></li>
+                        <li><a href="./em-construcao.html">Mais vendidos</a></li>
+                        <li><a href="./em-construcao.html">Gratuitos</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Comunidade</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html">Fórum</a></li>
+                        <li><a href="./em-construcao.html">Avaliações</a></li>
+                        <li><a href="./em-construcao.html">Dev spotlight</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h3 class="footer-col-title">Suporte</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html">Ajuda</a></li>
+                        <li><a href="./em-construcao.html">Política de privacidade</a></li>
+                        <li><a href="./em-construcao.html">Termos de uso</a></li>
+                        <li><a href="./cadastro.html">Criar conta</a></li>
+                    </ul>
+                </div>
+            </nav>
+
         </div>
-        <div class="category-card" style="background-color: #F4967C;">
-            <span style="color: #A63A1E;">RPG</span>
+
+        <div class="footer-bottom">
+            <small>&copy; 2025 Iara Games. Feito no Brasil com orgulho.</small>
         </div>
-        <div class="category-card" style="background-color: #111111;">
-            <span style="color: #ffffff;">TERROR</span>
-        </div>
-        <div class="category-card" style="background-color: #87DCFA;">
-            <span style="color: #1A6A8A;">AVENTURA</span>
-        </div>
-        <div class="category-card" style="background-color: #C87EF5;">
-            <span style="color: #6A1FA3;">ESTRATÉGIA</span>
-        </div>
-    </div>
-</section>
+    </footer>
+
 </body>
 </html>
