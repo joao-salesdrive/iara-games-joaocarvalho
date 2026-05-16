@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="O Enigma do Medo — jogo de aventura e mistério brasileiro. Descubra, compre e apoie desenvolvedores nacionais na Iara Games.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Michroma&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Estilos do projeto -->
+    <link rel="stylesheet" href="./variables.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./jogo.css">
+
+    <title>O Enigma do Medo — Iara Games</title>
+</head>
+<body>
+
+    <!-- ═══════════════════════════════════════
+         NAVBAR
+    ═══════════════════════════════════════ -->
+    <header>
+        <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+            <div class="container">
+                <a class="navbar-brand" href="./index.html" aria-label="Iara Games — página inicial">
+                    <img src="./images/logo_iara.svg" alt="Logotipo Iara Games" width="32" height="32">
+                    IARA
+                </a>
+                <button
+                    class="navbar-toggler"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navMenu"
+                    aria-controls="navMenu"
+                    aria-expanded="false"
+                    aria-label="Abrir menu de navegação"
+                >
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navMenu">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1 h-100 d-flex flex-column flex-lg-row">
+                        <li class="nav-item">
+                            <a class="nav-link" href="./em-construcao.html">Fórum</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="./em-construcao.html">Suporte</a>
+                        </li>
+                        <li class="nav-item ms-lg-3 mt-2 mt-lg-0">
+                            <a class="btn-iara-login" href="./login.html" aria-label="Fazer login ou criar conta">Login</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ═══════════════════════════════════════
+         CONTEÚDO PRINCIPAL
+    ═══════════════════════════════════════ -->
+    <main id="conteudo-principal">
+
+        <!-- ── HERO DO JOGO ── -->
+        <section class="game-hero" aria-label="Capa do jogo O Enigma do Medo">
+            <div class="game-hero-bg" style="background-image: url('./images/image50.png');" aria-hidden="true"></div>
+            <div class="game-hero-overlay" aria-hidden="true"></div>
+            <div class="container game-hero-content">
+                <nav aria-label="Breadcrumb">
+                    <ol class="breadcrumb-iara">
+                        <li><a href="./index.html">Início</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li><a href="./em-construcao.html">Terror</a></li>
+                        <li aria-hidden="true">/</li>
+                        <li aria-current="page">O Enigma do Medo</li>
+                    </ol>
+                </nav>
+                <h1 class="game-hero-title">O Enigma do Medo</h1>
+                <p class="game-hero-dev">por <a href="./em-construcao.html">Dark Vortex Studios</a></p>
+                <div class="game-hero-badges">
+                    <span class="badge-iara badge-genre">Terror</span>
+                    <span class="badge-iara badge-genre">Aventura</span>
+                    <span class="badge-iara badge-genre">Mistério</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ── ÁREA PRINCIPAL: info + compra ── -->
+        <section class="container mt-5" aria-labelledby="titulo-info-jogo">
+            <h2 id="titulo-info-jogo" class="visually-hidden">Informações e compra — O Enigma do Medo</h2>
+            <div class="row g-5">
+
+                <!-- Coluna principal -->
+                <div class="col-12 col-lg-8">
+
+                    <!-- Galeria de screenshots -->
+                    <div class="section-block">
+                        <h2 class="block-title">Screenshots</h2>
+                        <div
+                            id="galeriaCarousel"
+                            class="carousel slide rounded-3 overflow-hidden"
+                            data-bs-ride="false"
+                            aria-label="Galeria de screenshots de O Enigma do Medo"
+                        >
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img src="./images/enigma do medo/enigma_1.png" class="d-block w-100 gallery-img" alt="Screenshot 1 — O Enigma do Medo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/enigma do medo/enigma_2.png" class="d-block w-100 gallery-img" alt="Screenshot 2 — O Enigma do Medo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/enigma do medo/enigma_3.png" class="d-block w-100 gallery-img" alt="Screenshot 3 — O Enigma do Medo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/enigma do medo/enigma_4.png" class="d-block w-100 gallery-img" alt="Screenshot 4 — O Enigma do Medo">
+                                </div>
+                                <div class="carousel-item">
+                                    <img src="./images/enigma do medo/enigma_5.png" class="d-block w-100 gallery-img" alt="Screenshot 5 — O Enigma do Medo">
+                                </div>
+                            </div>
+
+                            <!-- Controles -->
+                            <button class="carousel-control-prev" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="prev" aria-label="Screenshot anterior">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#galeriaCarousel" data-bs-slide="next" aria-label="Próxima screenshot">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            </button>
+                        </div>
+
+                        <!-- Thumbnails da galeria -->
+                        <div class="gallery-thumbs mt-2">
+                            <button class="gallery-thumb active" data-bs-target="#galeriaCarousel" data-bs-slide-to="0" aria-label="Ver screenshot 1" aria-current="true">
+                                <img src="./images/enigma do medo/enigma_1.png" alt="">
+                            </button>
+                            <button class="gallery-thumb" data-bs-target="#galeriaCarousel" data-bs-slide-to="1" aria-label="Ver screenshot 2">
+                                <img src="./images/enigma do medo/enigma_2.png" alt="">
+                            </button>
+                            <button class="gallery-thumb" data-bs-target="#galeriaCarousel" data-bs-slide-to="2" aria-label="Ver screenshot 3">
+                                <img src="./images/enigma do medo/enigma_3.png" alt="">
+                            </button>
+                            <button class="gallery-thumb" data-bs-target="#galeriaCarousel" data-bs-slide-to="3" aria-label="Ver screenshot 4">
+                                <img src="./images/enigma do medo/enigma_4.png" alt="">
+                            </button>
+                            <button class="gallery-thumb" data-bs-target="#galeriaCarousel" data-bs-slide-to="4" aria-label="Ver screenshot 5">
+                                <img src="./images/enigma do medo/enigma_5.png" alt="">
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Descrição -->
+                    <div class="section-block mt-5">
+                        <h2 class="block-title">Sobre o jogo</h2>
+                        <p class="game-description">
+                            O Enigma do Medo é um jogo de aventura e terror desenvolvido por um estúdio independente brasileiro. Um grupo de investigadores é convocado para resolver desaparecimentos misteriosos em uma pequena cidade do interior. À medida que avançam, descobrem que a ameaça vai muito além do que imaginavam.
+                        </p>
+                        <p class="game-description mt-3">
+                            Com mecânicas de exploração, resolução de puzzles e tomada de decisões que afetam o destino dos personagens, o jogo mergulha o jogador em uma narrativa densa, cheia de reviravoltas e com forte identidade visual brasileira.
+                        </p>
+
+                        <dl class="game-meta mt-4">
+                            <div class="game-meta-row">
+                                <dt>Desenvolvedor</dt>
+                                <dd>Dark Vortex Studios</dd>
+                            </div>
+                            <div class="game-meta-row">
+                                <dt>Lançamento</dt>
+                                <dd>14 de março de 2024</dd>
+                            </div>
+                            <div class="game-meta-row">
+                                <dt>Plataformas</dt>
+                                <dd>Windows, Mac</dd>
+                            </div>
+                            <div class="game-meta-row">
+                                <dt>Idiomas</dt>
+                                <dd>Português, Inglês, Espanhol</dd>
+                            </div>
+                            <div class="game-meta-row">
+                                <dt>Classificação</dt>
+                                <dd>16 anos</dd>
+                            </div>
+                        </dl>
+                    </div>
+
+                    <!-- Avaliações -->
+                    <div class="section-block mt-5">
+                        <h2 class="block-title">Avaliações</h2>
+
+                        <!-- Resumo das avaliações -->
+                        <div class="review-summary">
+                            <div class="review-score">
+                                <span class="score-number">4.7</span>
+                                <div class="score-stars" aria-label="4.7 de 5 estrelas">
+                                    <span aria-hidden="true">★★★★★</span>
+                                </div>
+                                <span class="score-count">238 avaliações</span>
+                            </div>
+                            <div class="score-bars">
+                                <div class="score-bar-row"><span>5★</span><div class="score-bar-track"><div class="score-bar-fill" style="width: 72%"></div></div><span>72%</span></div>
+                                <div class="score-bar-row"><span>4★</span><div class="score-bar-track"><div class="score-bar-fill" style="width: 18%"></div></div><span>18%</span></div>
+                                <div class="score-bar-row"><span>3★</span><div class="score-bar-track"><div class="score-bar-fill" style="width: 6%"></div></div><span>6%</span></div>
+                                <div class="score-bar-row"><span>2★</span><div class="score-bar-track"><div class="score-bar-fill" style="width: 3%"></div></div><span>3%</span></div>
+                                <div class="score-bar-row"><span>1★</span><div class="score-bar-track"><div class="score-bar-fill" style="width: 1%"></div></div><span>1%</span></div>
+                            </div>
+                        </div>
+
+                        <!-- Cards de avaliação -->
+                        <div class="reviews-list mt-4">
+
+                            <article class="review-card" aria-label="Avaliação de Pedro Alves">
+                                <div class="review-header">
+                                    <div class="review-avatar" aria-hidden="true">PA</div>
+                                    <div>
+                                        <strong class="review-author">Pedro Alves</strong>
+                                        <time class="review-date" datetime="2024-04-02">2 de abril de 2024</time>
+                                    </div>
+                                    <span class="review-stars ms-auto" aria-label="5 de 5 estrelas">★★★★★</span>
+                                </div>
+                                <p class="review-text">
+                                    Um dos melhores jogos indie brasileiros que já joguei. A atmosfera é densa e a narrativa prende do começo ao fim. Recomendo muito!
+                                </p>
+                            </article>
+
+                            <article class="review-card" aria-label="Avaliação de Camila Rocha">
+                                <div class="review-header">
+                                    <div class="review-avatar" aria-hidden="true">CR</div>
+                                    <div>
+                                        <strong class="review-author">Camila Rocha</strong>
+                                        <time class="review-date" datetime="2024-03-19">19 de março de 2024</time>
+                                    </div>
+                                    <span class="review-stars ms-auto" aria-label="4 de 5 estrelas">★★★★☆</span>
+                                </div>
+                                <p class="review-text">
+                                    Jogabilidade sólida e história envolvente. Alguns puzzles são bem difíceis, mas isso faz parte do charme. A identidade visual é incrível.
+                                </p>
+                            </article>
+
+                            <article class="review-card" aria-label="Avaliação de Lucas Mendes">
+                                <div class="review-header">
+                                    <div class="review-avatar" aria-hidden="true">LM</div>
+                                    <div>
+                                        <strong class="review-author">Lucas Mendes</strong>
+                                        <time class="review-date" datetime="2024-03-15">15 de março de 2024</time>
+                                    </div>
+                                    <span class="review-stars ms-auto" aria-label="5 de 5 estrelas">★★★★★</span>
+                                </div>
+                                <p class="review-text">
+                                    Simplesmente incrível. Suporte ao produtor nacional de games. O estúdio merece muito reconhecimento por esse trabalho.
+                                </p>
+                            </article>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- Coluna lateral: compra -->
+                <aside class="col-12 col-lg-4" aria-label="Comprar o jogo">
+                    <div class="buy-card">
+                        <img
+                            src="./images/image50.png"
+                            alt="Capa de O Enigma do Medo"
+                            class="buy-card-cover"
+                        >
+                        <div class="buy-card-body">
+                            <p class="buy-label">Preço</p>
+                            <p class="buy-price">R$ 49,90</p>
+
+                            <button class="btn-buy w-100" aria-label="Comprar O Enigma do Medo por R$ 49,90">
+                                Comprar agora
+                            </button>
+                            <button class="btn-wishlist w-100 mt-2" aria-label="Adicionar O Enigma do Medo à lista de desejos">
+                                + Lista de desejos
+                            </button>
+
+                            <hr class="divider">
+
+                            <ul class="buy-tags">
+                                <li><span class="badge-iara badge-genre">Terror</span></li>
+                                <li><span class="badge-iara badge-genre">Aventura</span></li>
+                                <li><span class="badge-iara badge-genre">Mistério</span></li>
+                                <li><span class="badge-iara badge-genre">Puzzle</span></li>
+                                <li><span class="badge-iara badge-genre">Single-player</span></li>
+                            </ul>
+
+                            <hr class="divider">
+
+                            <dl class="buy-info">
+                                <div class="buy-info-row">
+                                    <dt>Tamanho</dt>
+                                    <dd>4.2 GB</dd>
+                                </div>
+                                <div class="buy-info-row">
+                                    <dt>Versão</dt>
+                                    <dd>1.3.2</dd>
+                                </div>
+                                <div class="buy-info-row">
+                                    <dt>Atualizado</dt>
+                                    <dd>Jan 2025</dd>
+                                </div>
+                            </dl>
+                        </div>
+                    </div>
+                </aside>
+
+            </div>
+        </section>
+
+        <!-- ── JOGOS RELACIONADOS ── -->
+        <section class="section-games container mt-5 mb-5" aria-labelledby="titulo-relacionados">
+            <div class="d-flex align-items-center justify-content-between mb-3">
+                <h2 class="section-title m-0" id="titulo-relacionados">Jogos Relacionados</h2>
+                <a href="./em-construcao.html" class="section-link">Ver todos</a>
+            </div>
+            <ul class="row row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5 g-3" role="list">
+                <li class="col game-card">
+                    <a href="./em-construcao.html" aria-label="Fobia St. Dinfna Hotel">
+                        <img src="./images/fobia.png" alt="Capa do jogo Fobia St. Dinfna Hotel">
+                        <span class="game-name">Fobia St. Dinfna</span>
+                        <span class="game-price">R$ 59,90</span>
+                    </a>
+                </li>
+                <li class="col game-card">
+                    <a href="./em-construcao.html" aria-label="A.I.L.A — R$ 79,95">
+                        <img src="./images/aila.png" alt="Capa do jogo A.I.L.A">
+                        <span class="game-name">A.I.L.A</span>
+                        <span class="game-price">R$ 79,95</span>
+                    </a>
+                </li>
+                <li class="col game-card">
+                    <a href="./em-construcao.html" aria-label="Ruff Ghannor — R$ 55,99">
+                        <img src="./images/ruff-ghannor.png" alt="Capa do jogo Ruff Ghannor">
+                        <span class="game-name">Ruff Ghannor</span>
+                        <span class="game-price">R$ 55,99</span>
+                    </a>
+                </li>
+                <li class="col game-card">
+                    <a href="./em-construcao.html" aria-label="Chroma Squad — R$ 46,99">
+                        <img src="./images/chroma-squad.png" alt="Capa do jogo Chroma Squad">
+                        <span class="game-name">Chroma Squad</span>
+                        <span class="game-price">R$ 46,99</span>
+                    </a>
+                </li>
+                <li class="col game-card">
+                    <a href="./em-construcao.html" aria-label="Bagdex — Grátis">
+                        <img src="./images/bagdex.png" alt="Capa do jogo Bagdex">
+                        <span class="game-name">Bagdex</span>
+                        <span class="game-price free">Grátis</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- ═══════════════════════════════════════
+         FOOTER
+    ═══════════════════════════════════════ -->
+    <footer class="site-footer" role="contentinfo">
+        <div class="container py-5">
+            <div class="row g-4">
+                <div class="col-12 col-md-4 col-lg-3">
+                    <a href="./index.html" class="navbar-brand mb-3 d-inline-flex" aria-label="Iara Games — voltar ao início">
+                        <img src="./images/logo_iara.svg" alt="Logotipo Iara Games" width="28" height="28">
+                        IARA
+                    </a>
+                    <p class="footer-tagline">A plataforma dos jogos indie brasileiros.</p>
+                </div>
+                <div class="col-6 col-md-2 offset-md-2 offset-lg-3">
+                    <h3 class="footer-col-title">Plataforma</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html" class="footer-col">Explorar jogos</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Categorias</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Mais vendidos</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Gratuitos</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h3 class="footer-col-title">Comunidade</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html" class="footer-col">Fórum</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Avaliações</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Dev spotlight</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-md-2">
+                    <h3 class="footer-col-title">Suporte</h3>
+                    <ul>
+                        <li><a href="./em-construcao.html" class="footer-col">Ajuda</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Privacidade</a></li>
+                        <li><a href="./em-construcao.html" class="footer-col">Termos de uso</a></li>
+                        <li><a href="./cadastro.html"      class="footer-col">Criar conta</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="footer-copy"><small>&copy; 2025 Iara Games. Feito no Brasil com orgulho.</small></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap 5 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Sincroniza thumbnails da galeria com o carrossel
+        const galeriaEl = document.getElementById('galeriaCarousel');
+        const thumbs    = document.querySelectorAll('.gallery-thumb');
+
+        galeriaEl.addEventListener('slid.bs.carousel', e => {
+            thumbs.forEach((t, i) => {
+                t.classList.toggle('active', i === e.to);
+                t.setAttribute('aria-current', i === e.to ? 'true' : 'false');
+            });
+        });
+    </script>
+
+</body>
+</html>

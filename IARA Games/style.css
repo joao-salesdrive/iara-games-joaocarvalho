@@ -1,218 +1,289 @@
-:root {
-    --color-background: #242424;
-    --color-text: #ffffff;
-    --color-iara-blue: #3EA8DA;
-    --color-iara-yellow: #E2FD4A;
-}
+/* ── Importa variáveis ── */
+@import "./variables.css";
 
-/* reset */
-* {
+/* ─── RESET ─── */
+*, *::before, *::after {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Geist", sans-serif;
-    background-color: var(--color-background);
 }
 
-button {
-    all: unset;
-    cursor: pointer;
+body {
+    background-color: var(--bg-iara);
+    color: var(--color-text);
+    font-family: "Outfit", sans-serif;
 }
 
-h1, h2, h3, h4 {
-    font-family: "Geist Mono", monospace;
-    font-weight: 300;
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Michroma", sans-serif;
+    font-weight: 400;
 }
 
 a {
     text-decoration: none;
     color: var(--color-text);
-    text-transform: uppercase;
-    font-weight: 200;
 }
 
 ul, ol {
     list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
-/* ─── HEADER ─── */
-.header {
-    height: 80px;
-    width: 100%;
+img {
+    display: block;
+    max-width: 100%;
+}
+
+/* ─── NAVBAR ─── */
+.navbar {
+    background-color: var(--bg-iara) !important;
+    border-bottom: 1px solid var(--color-border);
+    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.06);
+    padding-block: 0;
+    height: 72px;
+    z-index: 1050;
+}
+
+.navbar-collapse {
+    background-color: var(--bg-iara);
+    z-index: 1050;
+}
+
+@media (max-width: 991.98px) {
+    .navbar-collapse {
+        position: fixed;
+        top: 72px;
+        right: 0;
+        width: 50vw;
+        height: calc(100vh - 72px);
+        padding: 32px 24px;
+        border-left: 1px solid var(--color-border);
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .navbar-collapse .navbar-nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 4px;
+        width: 100%;
+    }
+
+    /* Links Fórum e Suporte no topo */
+    .navbar-collapse .nav-item .nav-link {
+        padding-inline: 0 !important;
+        font-size: 15px;
+        padding-block: 10px !important;
+    }
+
+    /* Botão login empurrado para o final */
+    .navbar-collapse .nav-item:last-child {
+        margin-top: auto;
+        padding-top: 32px;
+        padding-bottom: 24px;
+        width: 100%;
+    }
+
+    .navbar-collapse .btn-iara-login {
+        display: block;
+        text-align: center;
+        width: 100%;
+        padding: 12px 20px;
+    }
+}
+
+.navbar-brand {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-inline: 50px;
-    border-bottom: 1px solid #000;
-    box-shadow: 0 1px 0 0 rgba(255, 255, 255, 0.1);
-    z-index: 1;
-    position: relative;
-}
-
-.logo {
-    display: flex;
-    align-items: center;
-    gap: 6px;
-    color: var(--color-iara-blue);
-    font-family: "Geist Mono", monospace;
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 500;
-}
-
-.logo img {
-    background-color: transparent;
-}
-
-.logo span {
-    font-family: "Geist Mono", monospace;
-}
-
-.links {
-    display: flex;
-    align-items: center;
-    gap: 60px;
-}
-
-.links ul {
-    display: flex;
-    gap: 60px;
-}
-
-.btn-login {
-    font-family: "Geist Mono", monospace;
-    display: inline-flex;
     align-items: center;
     gap: 8px;
-    background-color: var(--color-iara-blue);
-    color: #000000;
-    padding: 8px 16px;
-    border-radius: 6px;
-    font-size: 14px;
-    font-weight: 500;
-    text-transform: uppercase;
+    color: var(--azul-arara) !important;
+    font-family: "Michroma", sans-serif;
+    font-size: 18px;
+    letter-spacing: 2px;
 }
 
-.btn-login img {
+.navbar-brand img {
     background-color: transparent;
-    width: 16px;
-    height: 16px;
-    display: block;
+    width: 32px;
+    height: 32px;
+    object-fit: contain;
+}
+
+.navbar-nav .nav-link {
+    color: rgba(255, 255, 255, 0.75) !important;
+    font-family: "Outfit", sans-serif;
+    font-size: 13px;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    padding-inline: 20px !important;
+    transition: color 0.15s;
+}
+
+.navbar-nav .nav-link:hover {
+    color: var(--color-text) !important;
+}
+
+.navbar-toggler {
+    border-color: var(--color-border) !important;
+}
+
+.navbar-toggler-icon {
+    filter: invert(1);
+}
+
+/* Botão Login na navbar */
+.btn-iara-login {
+    font-family: "Outfit", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+    background-color: var(--azul-arara);
+    color: #000 !important;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    transition: opacity 0.15s;
+}
+
+.btn-iara-login:hover {
+    opacity: 0.85;
+    color: #000 !important;
 }
 
 /* ─── HERO BANNER ─── */
-.hero-banner {
-    width: 100%;
-    max-width: 1200px;
-    padding-top: 50px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    gap: 8px;
+.hero-section {
+    padding-top: 40px;
 }
 
-.hero-main {
-    width: 60%;
-}
-
-.hero-main img {
+.hero-main-img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
 }
 
-.hero-side {
-    width: 40%;
+.hero-thumb {
+    width: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    aspect-ratio: 16 / 9;
+}
+
+.hero-thumbs {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
-.hero-thumb-wrapper {
-    width: 100%;
-    height: 50%;
+.hero-thumbs figure {
+    flex: 1;
 }
 
-.hero-thumb {
+.hero-thumbs .hero-thumb {
     width: 100%;
-    height: 100%;
+    aspect-ratio: 16 / 9;
     object-fit: cover;
     border-radius: 12px;
     display: block;
 }
 
-/* ─── PAGINAÇÃO ─── */
+/* ─── PAGINAÇÃO DO BANNER ─── */
 .banner-pagination {
-    width: 100%;
-    max-width: 1200px;
-    margin: 10px auto 0;
+    margin-top: 12px;
     display: flex;
-    justify-content: center;
-}
-
-.pagination-bar {
-    display: flex;
-    gap: 12px;
     align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
 
 .bar-segment {
-    width: 214px;
-    height: 12px;
-    border-radius: 58px;
-    background-color: rgba(44, 44, 44, 0.58);
+    width: 120px;
+    height: 4px;
+    border-radius: 99px;
+    background-color: rgba(255, 255, 255, 0.12);
     cursor: pointer;
+    border: none;
+    transition: background-color 0.2s;
 }
 
 .bar-segment.active {
-    background-color: #717171;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 .pagination-arrows {
-    padding-left: 16px;
     display: flex;
-    gap: 12px;
+    flex-direction: row !important;
+    gap: 8px;
+    align-items: center;
+}
+
+.pagination-arrows button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    opacity: 0.6;
+    transition: opacity 0.15s;
+}
+
+.pagination-arrows button:hover {
+    opacity: 1;
+}
+
+/* ─── HERO CARROSSEL MOBILE ─── */
+/* No mobile o hero vira um carrossel de 1 slide por vez */
+.hero-carousel-mobile {
+    display: none;
+}
+
+.hero-desktop {
+    display: flex;
+}
+
+@media (max-width: 991.98px) {
+    .hero-desktop {
+        display: none;
+    }
+    .hero-carousel-mobile {
+        display: block;
+    }
 }
 
 /* ─── SEÇÕES DE JOGOS ─── */
 .section-games {
-    width: 100%;
-    max-width: 1200px;
-    margin: 48px auto 0;
-}
-
-.section-header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin-bottom: 16px;
+    margin-top: 56px;
 }
 
 .section-title {
-    font-family: "Geist Mono", monospace;
-    font-size: 18px;
+    font-family: "Michroma", sans-serif;
+    font-size: 15px;
     font-weight: 400;
     color: var(--color-text);
-}
-
-.section-link {
-    font-family: "Geist Mono", monospace;
-    font-weight: 100;
-    font-size: 13px;
-    letter-spacing: 1px;
-    color: var(--color-iara-yellow);
+    letter-spacing: 1.5px;
     text-transform: uppercase;
 }
 
-.games-list {
-    display: flex;
-    gap: 16px;
+.section-link {
+    font-family: "Outfit", sans-serif;
+    font-size: 12px;
+    font-weight: 300;
+    letter-spacing: 1px;
+    color: var(--amarelo-iara);
+    text-transform: uppercase;
+    transition: opacity 0.15s;
+}
+
+.section-link:hover {
+    opacity: 0.75;
+    color: var(--amarelo-iara);
 }
 
 /* ─── CARD DE JOGO ─── */
 .game-card {
-    flex: 1;
     cursor: pointer;
 }
 
@@ -220,59 +291,68 @@ ul, ol {
     display: flex;
     flex-direction: column;
     gap: 8px;
-    text-transform: none;
-    font-weight: 400;
 }
 
 .game-card img {
     width: 100%;
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    border-radius: 12px;
-    display: block;
-    background-color: transparent;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.game-card img:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(0, 154, 255, 0.2);
 }
 
 .game-name {
     font-size: 14px;
-    color: var(--color-text);
     font-weight: 500;
-    background-color: transparent;
+    color: var(--color-text);
 }
 
 .game-price {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
-    background-color: transparent;
+    color: var(--color-muted);
 }
 
-/* ─── SELO ECO ─── */
+.game-price.free {
+    color: var(--verde-iara);
+    font-weight: 500;
+}
+
+/* ─── BADGE ECO ─── */
 .eco-badge {
     display: inline-flex;
     align-items: center;
     gap: 4px;
-    background-color: #1a3d1a;
-    color: #6efab4;
-    font-family: "Geist Mono", monospace;
-    font-size: 11px;
-    font-weight: 500;
+    background-color: rgba(226, 253, 74, 0.12);
+    color: var(--verde-iara);
+    font-family: "Outfit", sans-serif;
+    font-size: 10px;
+    font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 1px;
-    padding: 3px 8px;
+    padding: 2px 8px;
     border-radius: 4px;
-    border: 1px solid #2d6e2d;
+    border: 1px solid rgba(226, 253, 74, 0.25);
     width: fit-content;
 }
 
 /* ─── CATEGORIAS ─── */
 .category-card {
-    flex: 1;
     aspect-ratio: 1 / 1;
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.category-card:hover {
+    transform: translateY(-3px);
 }
 
 .category-card a {
@@ -285,82 +365,45 @@ ul, ol {
 }
 
 .category-card span {
-    font-family: "Geist Mono", monospace;
-    font-size: 14px;
-    font-weight: 500;
+    font-family: "Michroma", sans-serif;
+    font-size: 13px;
+    font-weight: 400;
     text-transform: uppercase;
     background-color: transparent;
+    letter-spacing: 1px;
 }
 
 /* ─── FOOTER ─── */
-.footer {
+.site-footer {
     margin-top: 80px;
-    border-top: 1px solid #000;
-    box-shadow: 0 -1px 0 0 rgba(255, 255, 255, 0.1);
-}
-
-.footer-inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 48px 0 40px;
-    display: grid;
-    grid-template-columns: 280px 1fr;
-    gap: 48px;
-}
-
-.footer-brand {
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
-}
-
-.footer-logo {
-    font-size: 14px;
+    border-top: 1px solid var(--color-border);
 }
 
 .footer-tagline {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.45);
-    text-transform: none;
+    color: var(--color-muted);
     font-weight: 300;
-    line-height: 1.5;
-    background-color: transparent;
-}
-
-.footer-nav {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 32px;
-}
-
-.footer-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    line-height: 1.6;
 }
 
 .footer-col-title {
-    font-family: "Geist Mono", monospace;
-    font-size: 11px;
-    font-weight: 500;
-    color: rgba(255, 255, 255, 0.35);
+    font-family: "Michroma", sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.3);
     text-transform: uppercase;
     letter-spacing: 2px;
-    background-color: transparent;
+    margin-bottom: 12px;
 }
 
-.footer-col ul {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
+.footer-col ul li + li {
+    margin-top: 10px;
 }
 
 .footer-col a {
     font-size: 13px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(255, 255, 255, 0.55);
     font-weight: 300;
-    text-transform: none;
     transition: color 0.15s;
 }
 
@@ -369,16 +412,16 @@ ul, ol {
 }
 
 .footer-bottom {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px 0 32px;
-    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    border-top: 1px solid var(--color-border);
+    padding-block: 20px;
 }
 
 .footer-bottom small {
     font-size: 12px;
-    color: rgba(255, 255, 255, 0.25);
+    color: rgba(255, 255, 255, 0.2);
     font-weight: 300;
-    background-color: transparent;
+}
+
+.footer-copy {
+    margin: 0;
 }

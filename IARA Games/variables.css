@@ -1,0 +1,12 @@
+:root {
+    /* ── Paleta Iara Games ── */
+    --azul-arara:   #009AFF;
+    --amarelo-iara: #FEA116;
+    --verde-iara:   #E2FD4A;
+    --bg-iara:      #242424;
+
+    /* ── Aliases utilitários ── */
+    --color-text:   #ffffff;
+    --color-muted:  rgba(255, 255, 255, 0.5);
+    --color-border: rgba(255, 255, 255, 0.08);
+}

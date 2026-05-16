@@ -10,20 +10,24 @@ Plataforma de distribuição de jogos indie brasileiros, com foco exclusivo em d
 
 ---
 
-## Sprint 02 — Evolução e UX
+## Sprint 03 — Bootstrap, Responsividade e Página de Jogo
 
-### O que evoluiu da Sprint 01 para a Sprint 02
+### O que evoluiu da Sprint 02 para a Sprint 03
 
-| Aspecto | Sprint 01 | Sprint 02 |
+| Aspecto | Sprint 02 | Sprint 03 |
 |---|---|---|
-| HTML | Estrutura básica com `<div>` | HTML semântico com `<main>`, `<section>`, `<nav>`, `<footer>`, `aria-label` |
-| CSS | Apenas Flexbox | Flexbox + CSS Grid no footer |
-| Páginas | Somente `index.html` | `index.html`, `login.html`, `cadastro.html`, `em-construcao.html` |
-| Formulários | Nenhum | Login e cadastro com validação HTML nativa |
-| Footer | Ausente | Footer completo com navegação em grid de 3 colunas |
-| Acessibilidade | Básica | `aria-label`, `aria-required`, `role`, `alt` descritivos em todas as imagens |
-| ESG | Não abordado | Seção "Jogos Conscientes" com selo Eco, conectando à proposta ambiental |
-| Idioma | `lang="en"` | Corrigido para `lang="pt-BR"` |
+| Framework CSS | Sem framework | Bootstrap 5 via CDN |
+| Tipografia | Geist + Geist Mono | Michroma (títulos) + Outfit (textos) — identidade visual da Atividade 01 |
+| Paleta | `#3EA8DA`, `#E2FD4A` | `#009AFF`, `#FEA116`, `#E2FD4A` — paleta oficial da identidade visual |
+| Páginas | `index.html`, `login.html`, `cadastro.html`, `em-construcao.html` | Adição de `jogo.html` — página de detalhes de jogo |
+| Logo | PNG provisório | SVG vetorial final (`logo_iara.svg`) |
+| CSS | `style.css` único | `variables.css` + `style.css` + `jogo.css` |
+| Navbar | Flexbox manual | Componente Bootstrap com colapso automático e menu lateral mobile |
+| Banner | Grid Flexbox estático | Grid 60/40 Bootstrap no desktop + Carousel Bootstrap no mobile |
+| Cards de jogos | Flexbox manual | `row-cols-*` Bootstrap com breakpoints responsivos |
+| Galeria | Ausente | Carousel Bootstrap com 5 screenshots e thumbnails sincronizadas |
+| Avaliações | Ausente | Cards de review com nota, estrelas, barras de distribuição e `<time>` semântico |
+| Acessibilidade | `aria-label`, `role`, `alt` | Expansão com `aria-labelledby`, `aria-current`, `aria-expanded`, `<figure>`, `<figcaption>`, `<time>`, `visually-hidden` |
 
 ---
 
@@ -73,28 +77,75 @@ A plataforma garante avaliações honestas da comunidade, sem pay-to-win ou cont
 
 ---
 
+## Recursos de Acessibilidade
+
+**Semântica HTML**
+O projeto utiliza tags semânticas em toda a estrutura: `<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`, `<footer>`, `<article>` e `<figure>` com `<figcaption>`. As seções possuem títulos associados via `aria-labelledby`, e datas são marcadas com `<time datetime="...">` para leitura correta por tecnologias assistivas.
+
+**Textos alternativos**
+Todas as imagens possuem atributo `alt` com descrição do conteúdo visual — capas de jogos, logotipo e screenshots. Imagens puramente decorativas utilizam `alt=""` combinado com `aria-hidden="true"`, sinalizando aos leitores de tela que devem ser ignoradas.
+
+**ARIA**
+Elementos interativos possuem `aria-label` descritivos: botões de navegação do banner, controles do carrossel, toggler do menu mobile e botões de compra. O carrossel de banner utiliza `role="tab"` e `aria-selected` nas barras de paginação. O breadcrumb é marcado com `aria-current="page"` na página atual.
+
+**Navegação por teclado**
+A estrutura de links e botões segue a ordem lógica do documento, permitindo navegação sequencial por teclado. O menu mobile é acessível via botão com `aria-expanded` e `aria-controls`, refletindo o estado aberto/fechado.
+
+**Contraste e legibilidade**
+A paleta utiliza texto branco `#FFFFFF` sobre fundo escuro `#242424`, e o azul principal `#009AFF` sobre fundo preto nos botões — ambos atendem aos critérios de contraste da WCAG 2.1 AA. O verde `#E2FD4A` é utilizado apenas para destaques e preços, sempre sobre fundo escuro.
+
+**Responsividade**
+O layout se adapta a diferentes tamanhos de tela com o sistema de grid do Bootstrap. No mobile, o banner principal é substituído por um carrossel de toque, e o menu de navegação colapsa em um menu lateral acessível pelo botão hambúrguer.
+
+---
+
+## Recursos do Bootstrap Utilizados
+
+**Sistema de Grid**
+Uso do sistema de colunas responsivo em todas as páginas. O banner usa `col-lg-8` e `col-lg-4` para o layout 60/40. As seções de jogos usam `row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-5` para adaptar a quantidade de cards por linha conforme o tamanho da tela. A página de jogo usa `col-12 col-lg-8` e `col-12 col-lg-4` para separar conteúdo principal e coluna lateral.
+
+**Navbar**
+Componente `navbar` com `navbar-expand-lg` para colapso automático em telas menores, `navbar-toggler` para o botão hambúrguer mobile e `collapse navbar-collapse` para o menu retrátil. Uso de `ms-auto` para alinhamento dos links à direita.
+
+**Carousel**
+Dois carrosséis distintos: o banner da home em mobile com `carousel slide` e controle via `data-bs-slide`, e a galeria de screenshots na página de jogo com thumbnails clicáveis via `data-bs-slide-to`. Ambos controlados pela API JavaScript do Bootstrap (`bootstrap.Carousel`).
+
+**Utilitários de Espaçamento e Display**
+Uso extensivo de classes utilitárias como `mt-*`, `mb-*`, `py-*`, `gap-*`, `d-flex`, `d-block`, `ms-auto`, `w-100` e `h-100` para espaçamento e controle de layout sem CSS adicional.
+
+**Utilitários Responsivos**
+Classes `flex-column`, `flex-lg-row`, `align-items-center`, `justify-content-between` e `offset-md-*` para comportamentos diferentes por breakpoint.
+
+**Visually Hidden**
+Classe `visually-hidden` para esconder títulos e legendas visualmente mantendo-os acessíveis para leitores de tela.
+
+**Containers**
+Uso de `.container` em todas as seções para limitar a largura do conteúdo e centralizar automaticamente com margens laterais responsivas.
+
+---
+
 ## Justificativas de UX e UI
 
-### HTML semântico
-O uso de elementos como `<header>`, `<nav>`, `<main>`, `<section>`, `<footer>` e atributos `aria-label` melhora a acessibilidade para leitores de tela e facilita a indexação por mecanismos de busca. Cada seção da home possui um `<h2>` identificado por `aria-labelledby`, criando uma hierarquia clara de conteúdo.
+### Identidade visual aplicada
+O logotipo SVG, a paleta de cores e a tipografia Michroma foram extraídos diretamente da Atividade 01 e aplicados de forma consistente nas duas páginas. O azul arara `#009AFF` é usado nos CTAs principais, o amarelo `#FEA116` nos links de "Ver todos" e o verde `#E2FD4A` em preços gratuitos e badges de destaque.
 
-### CSS Grid no footer
-O footer utiliza `display: grid` com `grid-template-columns: 280px 1fr` para separar a área da marca das colunas de navegação, e `grid-template-columns: repeat(3, 1fr)` nas colunas internas. Isso garante alinhamento consistente e facilita a manutenção do layout.
+### HTML semântico
+O uso de elementos como `<header>`, `<nav>`, `<main>`, `<section>`, `<aside>`, `<footer>`, `<article>` e `<figure>` melhora a acessibilidade para leitores de tela e facilita a indexação por mecanismos de busca. Cada seção possui um `<h2>` identificado por `aria-labelledby`, criando hierarquia clara de conteúdo.
+
+### variables.css separado
+As custom properties de cor foram isoladas em `variables.css` e importadas tanto no `style.css` quanto no `jogo.css`. Isso garante consistência da paleta em todo o projeto e facilita ajustes futuros em um único ponto.
 
 ### Paleta de cores e contraste
-A combinação de fundo `#242424` com texto branco `#ffffff` foi validada com nível de contraste AAA (15.5:1), garantindo legibilidade em qualquer cenário, incluindo usuários com baixa visão.
+A combinação de fundo `#242424` com texto branco `#FFFFFF` atende ao nível de contraste AA da WCAG 2.1. O azul `#009AFF` sobre preto nos botões também passa nos critérios de contraste para texto grande.
 
 ### Tipografia
-Geist para textos corridos (boa legibilidade em tamanhos menores) e Geist Mono para títulos, labels e elementos de interface (reforça o caráter técnico e gamer da plataforma).
+Michroma para títulos e elementos de interface (reforça o caráter gamer e a identidade da marca) e Outfit para textos corridos (boa legibilidade em tamanhos menores e peso variável de 300 a 700).
 
-### Formulários acessíveis
-Todos os campos possuem `<label>` associado via `for/id`, `aria-required="true"` nos campos obrigatórios, `autocomplete` para facilitar o preenchimento e `placeholder` descritivos. O botão de submit é um `<button type="submit">` semântico.
-
-### Selo Eco
-O selo posicionado entre a imagem e o nome do jogo foi escolhido para ser visível sem interromper a hierarquia visual do card. As cores verde escuro `#1a3d1a` com texto `#6efab4` mantêm o padrão da paleta da plataforma e comunicam claramente o significado ambiental.
+### Página de jogo
+A página `jogo.html` foi estruturada em layout de duas colunas no desktop — conteúdo principal com galeria, descrição e avaliações à esquerda, e card de compra sticky à direita. No mobile as colunas empilham verticalmente e o card deixa de ser sticky para não ocupar espaço fixo em telas pequenas.
 
 ### Decisão de navegação
-O botão de login no header leva para `login.html`, que por sua vez conecta com `cadastro.html`. Esse fluxo reduz a fricção — o usuário nunca fica em beco sem saída e sempre tem um caminho de volta para a home.
+Todos os cards de jogos da home e as imagens do banner linkam para `jogo.html`. O breadcrumb na página de jogo permite retorno à home e à categoria, sem beco sem saída.
 
 ---
 
@@ -102,15 +153,18 @@ O botão de login no header leva para `login.html`, que por sua vez conecta com 
 
 ```
 iara-games/
-├── index.html          # Home — página principal
-├── login.html          # Página de login
-├── cadastro.html       # Página de cadastro
-├── em-construcao.html  # Placeholder para páginas futuras
-├── style.css           # Estilos da home
-├── auth.css            # Estilos compartilhados de login e cadastro
-├── em-construcao.css   # Estilos da página placeholder
+├── index.html              # Home — página principal
+├── jogo.html               # Página de detalhes de jogo
+├── login.html              # Página de login
+├── cadastro.html           # Página de cadastro
+├── em-construcao.html      # Placeholder para páginas futuras
+├── variables.css           # Custom properties da paleta
+├── style.css               # Estilos globais (home + componentes compartilhados)
+├── jogo.css                # Estilos exclusivos da página de jogo
+├── auth.css                # Estilos de login e cadastro
+├── em-construcao.css       # Estilos da página placeholder
 └── images/
-    ├── logo-iara-v1.png
+    ├── logo_iara.svg
     ├── image50.png
     ├── image25-1.png
     ├── fobia.png
@@ -119,9 +173,13 @@ iara-games/
     ├── chroma-squad.png
     ├── lenda-heroi.png
     ├── bagdex.png
+    ├── enigma do medo/
+    │   ├── enigma_1.png
+    │   ├── enigma_2.png
+    │   ├── enigma_3.png
+    │   ├── enigma_4.png
+    │   └── enigma_5.png
     └── icons/
-        ├── icon-user.png
-        ├── icon-user.svg
         ├── arrow_left.png
         └── arrow_right.png
 ```
@@ -131,12 +189,13 @@ iara-games/
 ## Tecnologias utilizadas
 
 - HTML5 semântico
-- CSS3 (Flexbox + Grid)
-- Google Fonts — Geist e Geist Mono
+- CSS3 (Custom Properties + Flexbox + Grid)
+- Bootstrap 5.3 (Grid, Navbar, Carousel, Utilitários)
+- Google Fonts — Michroma e Outfit
 
 ---
 
 ## Autor
 
 **João Pedro Carvalho**
-FIAP — Sprint 02 · 2025
+FIAP — Sprint 03 · 2025
